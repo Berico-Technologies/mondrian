@@ -77,11 +77,11 @@ chooseJavaHome() {
 
     # 3. If JDK is installed in a non-standard location, customize here.
     #
-    #case ${jdkVersion} in
+    case ${jdkVersion} in
     #(jdk1.5) export JAVA_HOME=...; return ;;
     #(jdk1.6) export JAVA_HOME=...; return ;;
-    #(jdk1.7) export JAVA_HOME=...; return ;;
-    #esac
+    (jdk1.7) export JAVA_HOME=/Users/mnguyen/Apps/jdk1.7.0_25.jdk/Contents/Home; return ;;
+    esac
 
     # 4. Leave JAVA_HOME unchanged. If it does not match the required version,
     # ant will no-op.

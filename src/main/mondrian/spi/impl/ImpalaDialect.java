@@ -83,7 +83,7 @@ public class ImpalaDialect extends HiveDialect {
         boolean collateNullsLast)
     {
         String ret = null;
-
+        
         if (nullable && collateNullsLast) {
             ret = "CASE WHEN " + expr + " IS NULL THEN 1 ELSE 0 END, ";
         } else {
@@ -95,6 +95,8 @@ public class ImpalaDialect extends HiveDialect {
         } else {
             ret += expr + " DESC";
         }
+
+        ret += " LIMIT 1000000000000";
 
         return ret;
     }
